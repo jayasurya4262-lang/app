@@ -1,0 +1,12 @@
+workflows:
+  flutter-workflow:
+    name: Flutter Build
+    triggers:
+      - push
+    scripts:
+      - name: Install dependencies
+        script: flutter pub get
+      - name: Build APK
+        script: flutter build apk
+    artifacts:
+      - build/app/outputs/flutter-apk/app-release.apk
